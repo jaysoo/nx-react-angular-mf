@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@mf2/ui": ["packages/ui/src/index.ts"],
       "feat-1/Module": ["apps/feat-1/src/remote-entry.ts"],
       "feat-2/Module": ["apps/feat-2/src/remote-entry.ts"]
     }
