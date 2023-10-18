@@ -1,0 +1,16 @@
+{
+  "name": "lib-36",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/lib-36/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/lib-36/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  }
+}

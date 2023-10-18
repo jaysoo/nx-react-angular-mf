@@ -1,0 +1,95 @@
+{
+  "name": "module-24",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "modules/module-24/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/modules/module-24",
+        "index": "modules/module-24/src/index.html",
+        "baseHref": "/",
+        "main": "modules/module-24/src/main.ts",
+        "tsConfig": "modules/module-24/tsconfig.app.json",
+        "assets": [
+          "modules/module-24/src/favicon.ico",
+          "modules/module-24/src/assets"
+        ],
+        "styles": [],
+        "scripts": [],
+        "isolatedConfig": true,
+        "webpackConfig": "modules/module-24/webpack.config.ts"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "modules/module-24/src/environments/environment.ts",
+              "with": "modules/module-24/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false,
+          "webpackConfig": "modules/module-24/webpack.config.prod.ts"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/react:module-federation-dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "module-24:build",
+        "hmr": true,
+        "port": 4228
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "module-24:build:development"
+        },
+        "production": {
+          "buildTarget": "module-24:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["modules/module-24/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "defaultConfiguration": "production",
+      "options": {
+        "buildTarget": "module-24:build",
+        "watch": false,
+        "port": 4228
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "module-24:build:development"
+        },
+        "production": {
+          "buildTarget": "module-24:build:production"
+        }
+      }
+    }
+  },
+  "tags": []
+}

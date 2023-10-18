@@ -1,0 +1,16 @@
+{
+  "name": "lib-87",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/lib-87/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/lib-87/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  }
+}

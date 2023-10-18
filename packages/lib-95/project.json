@@ -1,0 +1,16 @@
+{
+  "name": "lib-95",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/lib-95/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/lib-95/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  }
+}

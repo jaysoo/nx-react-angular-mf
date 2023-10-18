@@ -1,0 +1,16 @@
+{
+  "name": "lib-86",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/lib-86/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/lib-86/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  }
+}
