@@ -333,6 +333,46 @@
       "module-99/Module": ["modules/module-99/src/remote-entry.ts"],
       "module-99/module-99": ["packages/lib-99/src/index.ts"],
       "ng-ui/Module": ["modules/ng-ui/src/app/remote-entry/entry.module.ts"],
+      "ng-util-1/Module": [
+        "modules/ng-util-1/src/app/remote-entry/entry.module.ts"
+      ],
+      "ng-util-1/util-1": ["libs/util-1/src/index.ts"],
+      "ng-util-10/Module": [
+        "modules/ng-util-10/src/app/remote-entry/entry.module.ts"
+      ],
+      "ng-util-10/util-10": ["libs/util-10/src/index.ts"],
+      "ng-util-2/Module": [
+        "modules/ng-util-2/src/app/remote-entry/entry.module.ts"
+      ],
+      "ng-util-2/util-2": ["libs/util-2/src/index.ts"],
+      "ng-util-3/Module": [
+        "modules/ng-util-3/src/app/remote-entry/entry.module.ts"
+      ],
+      "ng-util-3/util-3": ["libs/util-3/src/index.ts"],
+      "ng-util-4/Module": [
+        "modules/ng-util-4/src/app/remote-entry/entry.module.ts"
+      ],
+      "ng-util-4/util-4": ["libs/util-4/src/index.ts"],
+      "ng-util-5/Module": [
+        "modules/ng-util-5/src/app/remote-entry/entry.module.ts"
+      ],
+      "ng-util-5/util-5": ["libs/util-5/src/index.ts"],
+      "ng-util-6/Module": [
+        "modules/ng-util-6/src/app/remote-entry/entry.module.ts"
+      ],
+      "ng-util-6/util-6": ["libs/util-6/src/index.ts"],
+      "ng-util-7/Module": [
+        "modules/ng-util-7/src/app/remote-entry/entry.module.ts"
+      ],
+      "ng-util-7/util-7": ["libs/util-7/src/index.ts"],
+      "ng-util-8/Module": [
+        "modules/ng-util-8/src/app/remote-entry/entry.module.ts"
+      ],
+      "ng-util-8/util-8": ["libs/util-8/src/index.ts"],
+      "ng-util-9/Module": [
+        "modules/ng-util-9/src/app/remote-entry/entry.module.ts"
+      ],
+      "ng-util-9/util-9": ["libs/util-9/src/index.ts"],
       "shared-ui/Module": ["apps/shared-ui/src/remote-entry.ts"],
       "shared-ui/ui-module": ["packages/ui/src/index.ts"],
       "shared-utils/Module": ["apps/shared-utils/src/remote-entry.ts"],

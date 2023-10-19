@@ -4,10 +4,12 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
 import { NxWelcomeComponent } from './nx-welcome.component';
+import {RemoteEntryModule as NgUiModule} from 'ng-ui/Module'
 
 @NgModule({
   declarations: [AppComponent, NxWelcomeComponent],
   imports: [
+    NgUiModule,
     BrowserModule,
     RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
   ],

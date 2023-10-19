@@ -1,0 +1,122 @@
+{
+  "name": "ng-util-3",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "mf2",
+  "sourceRoot": "modules/ng-util-3/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:webpack-browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/modules/ng-util-3",
+        "index": "modules/ng-util-3/src/index.html",
+        "main": "modules/ng-util-3/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "modules/ng-util-3/tsconfig.app.json",
+        "assets": [
+          "modules/ng-util-3/src/favicon.ico",
+          "modules/ng-util-3/src/assets"
+        ],
+        "styles": ["modules/ng-util-3/src/styles.css"],
+        "scripts": [],
+        "customWebpackConfig": {
+          "path": "modules/ng-util-3/webpack.config.ts"
+        }
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all",
+          "customWebpackConfig": {
+            "path": "modules/ng-util-3/webpack.prod.config.ts"
+          }
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@nx/angular:webpack-dev-server",
+      "options": {
+        "port": 4206,
+        "publicHost": "http://localhost:4206"
+      },
+      "configurations": {
+        "production": {
+          "browserTarget": "ng-util-3:build:production"
+        },
+        "development": {
+          "browserTarget": "ng-util-3:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "ng-util-3:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "modules/ng-util-3/**/*.ts",
+          "modules/ng-util-3/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "modules/ng-util-3/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "defaultConfiguration": "production",
+      "options": {
+        "buildTarget": "ng-util-3:build",
+        "port": 4206,
+        "watch": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "ng-util-3:build:development"
+        },
+        "production": {
+          "buildTarget": "ng-util-3:build:production"
+        }
+      }
+    }
+  }
+}
