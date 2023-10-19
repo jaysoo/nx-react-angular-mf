@@ -1,0 +1,109 @@
+{
+  "name": "ui2-module",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "modules/ui2-module/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/modules/ui2-module",
+        "index": "modules/ui2-module/src/index.html",
+        "baseHref": "/",
+        "main": "modules/ui2-module/src/main.ts",
+        "tsConfig": "modules/ui2-module/tsconfig.app.json",
+        "assets": [
+          "modules/ui2-module/src/favicon.ico",
+          "modules/ui2-module/src/assets"
+        ],
+        "styles": ["modules/ui2-module/src/styles.css"],
+        "scripts": [],
+        "isolatedConfig": true,
+        "webpackConfig": "modules/ui2-module/webpack.config.ts"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "modules/ui2-module/src/environments/environment.ts",
+              "with": "modules/ui2-module/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false,
+          "webpackConfig": "modules/ui2-module/webpack.config.prod.ts"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/react:module-federation-dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "ui2-module:build",
+        "hmr": true,
+        "port": 4305
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "ui2-module:build:development"
+        },
+        "production": {
+          "buildTarget": "ui2-module:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["modules/ui2-module/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "defaultConfiguration": "production",
+      "options": {
+        "buildTarget": "ui2-module:build",
+        "watch": false,
+        "port": 4305
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "ui2-module:build:development"
+        },
+        "production": {
+          "buildTarget": "ui2-module:build:production"
+        }
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "modules/ui2-module/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    }
+  },
+  "tags": []
+}

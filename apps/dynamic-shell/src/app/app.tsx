@@ -1,13 +1,11 @@
 import * as React from 'react';
 import { Ui } from 'shared-ui/ui-module';
 import { Lib1 } from 'module-1/module-1';
-import { Ui2 } from 'ui2-module/ui2-module';
 
 import NxWelcome from './nx-welcome';
 
 import { Link, Route, Routes } from 'react-router-dom';
 
-// host -> remote -> remote -> remote
 const Feat1 = React.lazy(() => import('feat-1/Module'));
 
 const Feat2 = React.lazy(() => import('feat-2/Module'));
@@ -16,7 +14,6 @@ export function App() {
   return (
     <>
       <Ui />
-      <Ui2/>
       <Lib1 />
       <ul>
         <li>

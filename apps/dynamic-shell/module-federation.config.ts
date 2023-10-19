@@ -1,12 +1,12 @@
 import { ModuleFederationConfig } from '@nx/webpack';
 
 const config: ModuleFederationConfig = {
-  name: 'rshell',
+  name: 'dynamic-shell',
+  library: { type: 'var', name: 'dynamic_shell' },
   remotes: [
     'feat-1', 
     'feat-2',
-    'module-1',
-    'ui2-module',
+    'module-1'
   ],
 };
 

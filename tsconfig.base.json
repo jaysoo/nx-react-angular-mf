@@ -116,6 +116,7 @@
       "@mf2/lib-98": ["packages/lib-98/src/index.ts"],
       "@mf2/lib-99": ["packages/lib-99/src/index.ts"],
       "@mf2/ui": ["packages/ui/src/index.ts"],
+      "@mf2/ui2": ["libs/ui2/src/index.ts"],
       "@mf2/utils": ["packages/utils/src/index.ts"],
       "feat-1/Module": ["apps/feat-1/src/remote-entry.ts"],
       "feat-2/Module": ["apps/feat-2/src/remote-entry.ts"],
@@ -321,7 +322,9 @@
       "module-99/module-99": ["packages/lib-99/src/index.ts"],
       "shared-ui/Module": ["apps/shared-ui/src/remote-entry.ts"],
       "shared-ui/ui-module": ["packages/ui/src/index.ts"],
-      "shared-utils/Module": ["apps/shared-utils/src/remote-entry.ts"]
+      "shared-utils/Module": ["apps/shared-utils/src/remote-entry.ts"],
+      "ui2-module/Module": ["modules/ui2-module/src/remote-entry.ts"],
+      "ui2-module/ui2-module": ["libs/ui2/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

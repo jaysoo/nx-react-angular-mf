@@ -1,10 +1,10 @@
 Fixes:
 - TS config files for React (webpack.config.ts, module-federation.config.ts)
+- Type-safe remotes
 
 Features:
 - Versioning workspace libs
 - Promise-based remotes
-- Type-safe local remotes
 - Recursive remotes (aka remotes of remotes)
 - Federate anything (`nx g federate-module`)
 
