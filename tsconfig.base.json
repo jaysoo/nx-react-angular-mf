@@ -120,6 +120,8 @@
       "@mf2/utils": ["packages/utils/src/index.ts"],
       "feat-1/Module": ["apps/feat-1/src/remote-entry.ts"],
       "feat-2/Module": ["apps/feat-2/src/remote-entry.ts"],
+      "feat-3/Module": ["apps/feat-3/src/app/remote-entry/entry.module.ts"],
+      "feat-4/Module": ["apps/feat-4/src/app/remote-entry/entry.module.ts"],
       "module-1/Module": ["modules/module-1/src/remote-entry.ts"],
       "module-1/module-1": ["packages/lib-1/src/index.ts"],
       "module-10/Module": ["modules/module-10/src/remote-entry.ts"],
